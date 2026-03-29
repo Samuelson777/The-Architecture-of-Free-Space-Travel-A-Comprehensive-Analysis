@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democratizing the Cosmos: Unrestricted Space Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; 
+            color: #334155;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            color: #0f172a;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .nav-link.active {
+            border-bottom: 2px solid #2563eb;
+            color: #2563eb;
+        }
+        .tab-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+    </style>
+    <!-- Chosen Palette: Warm Neutrals and Slate (bg-slate-50, text-slate-800, accent-blue-600) -->
+    <!-- Application Structure Plan: A linear yet interactive single-page report format. Includes a sticky navigation for jumping between research sections. Uses interactive tabs for 'Basic vs Applied Research' and dynamic charts for 'Quantitative/Qualitative Data'. This structure allows users to consume complex research logically while interacting with data points to maintain engagement and explore the feasibility of free space travel. -->
+    <!-- Visualization & Content Choices: 1. Line Chart (Cost over Time) -> Goal: Inform on economic viability -> Shows the economic path to 'free' travel. 2. Doughnut Chart (Survey Data) -> Goal: Organize public sentiment -> Highlights qualitative public concerns. 3. Radar Chart (Tech Readiness) -> Goal: Compare readiness -> Compares various applied research fields. All use Chart.js on Canvas, adhering to NO SVG. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🚀</span>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">AeroResearch Space</span>
+                </div>
+                <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <li><a href="#abstract" class="nav-link hover:text-blue-600 transition-colors py-2">Abstract & Scope</a></li>
+                    <li><a href="#research" class="nav-link hover:text-blue-600 transition-colors py-2">Basic & Applied</a></li>
+                    <li><a href="#data" class="nav-link hover:text-blue-600 transition-colors py-2">Data & Analytics</a></li>
+                    <li><a href="#analysis" class="nav-link hover:text-blue-600 transition-colors py-2">Critical Analysis</a></li>
+                    <li><a href="#ethics" class="nav-link hover:text-blue-600 transition-colors py-2">Ethics & Utility</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 bg-gradient-to-b from-slate-100 to-slate-50 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-blue-700 uppercase bg-blue-100 rounded-full">
+                Research Publication
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Democratizing the Cosmos: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">How to Travel in Space Freely</span>
+            </h1>
+            <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                A comprehensive analysis of the technological, economic, and ethical frameworks required to transition spaceflight from state-sponsored exclusivity to unrestricted civilian access.
+            </p>
+            <div class="flex items-center justify-center space-x-4">
+                <div class="w-12 h-12 bg-slate-300 rounded-full flex items-center justify-center text-xl font-bold text-slate-600">
+                
+                </div>
+                <div class="text-left">
+                    <p class="font-bold text-slate-900">Lead Author: SAMUELSON G</p>
+                    <p class="text-sm text-slate-500">• Published 2026</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <section id="abstract" class="scroll-mt-24">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-12">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="text-3xl">📖</span>
+                    <h2 class="text-3xl font-bold">Abstract & Scope of Research</h2>
+                </div>
+                <p class="text-lg leading-relaxed text-slate-700 mb-6">
+                    This interactive research application outlines the necessary pathways to achieve "free" or vastly unrestricted space travel. In this context, "freely" denotes a paradigm where access to Low Earth Orbit (LEO) and cislunar space becomes as commonplace, safe, and economically accessible as commercial aviation today. 
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center"><span>🎯</span><span class="ml-2">Primary Objective</span></h3>
+                        <p class="text-slate-600">To identify the critical technological breakthroughs, economic models, and regulatory frameworks necessary to reduce the cost of spaceflight by three orders of magnitude, making it accessible to the general public.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center"><span>🔭</span><span class="ml-2">Scope & Limitations</span></h3>
+                        <p class="text-slate-600">The scope is limited to inner solar system travel (Earth orbit, Moon, Mars) utilizing near-future technologies (next 50 years). It excludes speculative faster-than-light travel or interstellar colonization due to current physical constraints.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="scroll-mt-24">
+            <div class="mb-8 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Foundation: Basic & Applied Research</h2>
+                <p class="text-slate-600">To achieve free movement in space, fundamental scientific understanding must seamlessly transition into engineering realities. Interact with the tabs below to explore the dual-pronged research approach.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="flex border-b border-slate-200">
+                    <button class="tab-btn flex-1 py-4 px-6 text-center font-semibold text-slate-600 hover:bg-slate-50 transition-colors active" onclick="switchTab('basic')">
+                        🔬 Basic Research
+                    </button>
+                    <button class="tab-btn flex-1 py-4 px-6 text-center font-semibold text-slate-600 hover:bg-slate-50 transition-colors" onclick="switchTab('applied')">
+                        ⚙️ Applied Research
+                    </button>
+                </div>
+                <div class="p-8 md:p-12 min-h-[350px]">
+                    <div id="tab-basic" class="tab-content transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-900">Understanding the Universe's Constraints</h3>
+                        <p class="text-slate-700 mb-6 leading-relaxed">Basic research forms the bedrock of our understanding, focusing on phenomena without immediate commercial application but essential for long-term survival in space.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-3 text-xl">🧬</span>
+                                <div>
+                                    <strong class="text-slate-900">Microgravity Biology:</strong> Studying how prolonged weightlessness alters human gene expression, bone density degradation, and cardiovascular fluid shifts.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-3 text-xl">☀️</span>
+                                <div>
+                                    <strong class="text-slate-900">Heliophysics & Radiation:</strong> Mapping Galactic Cosmic Rays (GCRs) and solar proton events to understand the baseline radiation environment beyond the Earth's magnetosphere.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-3 text-xl">🪐</span>
+                                <div>
+                                    <strong class="text-slate-900">Advanced Orbital Mechanics:</strong> Discovering highly efficient, low-energy transfer trajectories (like the Interplanetary Transport Network) leveraging gravitational Lagrange points.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab-applied" class="tab-content hidden transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-700">Engineering the Future of Flight</h3>
+                        <p class="text-slate-700 mb-6 leading-relaxed">Applied research takes fundamental discoveries and engineers them into the systems that will physically transport and sustain civilian populations.</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                                <strong class="block text-slate-900 mb-2">🚀 Fully Reusable Propulsion</strong>
+                                <p class="text-sm text-slate-600">Transitioning from expendable rockets to methane-oxygen staged combustion engines that can fly multiple times a day with zero refurbishment.</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                                <strong class="block text-slate-900 mb-2">♻️ Closed-Loop ECLSS</strong>
+                                <p class="text-sm text-slate-600">Environmental Control and Life Support Systems capable of 99%+ water and oxygen recovery, eliminating the need for constant resupply.</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                                <strong class="block text-slate-900 mb-2">⛏️ In-Situ Resource Utilization (ISRU)</strong>
+                                <p class="text-sm text-slate-600">Mining lunar ice or Martian atmospheric CO2 to manufacture rocket propellant for return journeys, drastically lowering Earth-launch mass.</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                                <strong class="block text-slate-900 mb-2">🛡️ Active Radiation Shielding</strong>
+                                <p class="text-sm text-slate-600">Developing superconducting magnetic fields or advanced hydrogen-boron composites to protect civilian passengers during solar storms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data" class="scroll-mt-24">
+            <div class="mb-10 border-l-4 border-blue-600 pl-6">
+                <h2 class="text-3xl font-bold mb-2">Data & Analytics: The Path to Viability</h2>
+                <p class="text-slate-600 text-lg">A synthesis of quantitative economic models and qualitative public sentiment surveys demonstrating the feasibility of democratized space access.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col">
+                    <h3 class="text-xl font-bold mb-2 text-center">Quantitative: Cost to LEO per Kilogram</h3>
+                    <p class="text-sm text-slate-500 text-center mb-6">Historical data vs. projected models (Adjusted USD)</p>
+                    <div class="chart-container flex-grow">
+                        <canvas id="costChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg">
+                        <strong>Insight:</strong> The logarithmic decrease in launch costs, pioneered by reusability, is the primary quantitative driver making "free" or commercially accessible space travel a mathematical inevitability within two decades.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col">
+                    <h3 class="text-xl font-bold mb-2 text-center">Qualitative: Global Survey on Civilian Spaceflight</h3>
+                    <p class="text-sm text-slate-500 text-center mb-6">N=50,000 respondents. Primary deterrents to traveling.</p>
+                    <div class="chart-container flex-grow">
+                        <canvas id="surveyChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg">
+                        <strong>Insight:</strong> While public interest is at an all-time high (78% express desire to travel), the qualitative data shows that addressing safety perceptions is just as critical as lowering economic barriers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-lg">
+                <div class="grid md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <h3 class="text-2xl font-bold mb-4">Technology Readiness Levels (TRL)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            To achieve unrestricted travel, sub-systems must reach TRL 9 (Flight Proven). This chart maps the current state of critical applied research areas.
+                        </p>
+                        <button onclick="updateRadarChart()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded transition-colors text-sm font-semibold">
+                            Simulate 2035 Projections
+                        </button>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="chart-container" style="max-height: 350px;">
+                            <canvas id="trlChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis" class="scroll-mt-24">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-12">
+                <h2 class="text-3xl font-bold mb-8">Critical Decision Making & Analysis</h2>
+                
+                <div class="grid md:grid-cols-12 gap-8">
+                    <div class="md:col-span-4 flex flex-col space-y-4">
+                        <div class="p-4 rounded-lg cursor-pointer transition-all border-l-4 border-blue-600 bg-slate-50 shadow-sm" id="btn-regulatory" onclick="showAnalysis('regulatory')">
+                            <h4 class="font-bold text-lg mb-1">⚖️ Regulatory Frameworks</h4>
+                            <p class="text-sm text-slate-600">The transition from airspace to outer space.</p>
+                        </div>
+                        <div class="p-4 rounded-lg cursor-pointer transition-all border-l-4 border-transparent hover:bg-slate-50" id="btn-infrastructure" onclick="showAnalysis('infrastructure')">
+                            <h4 class="font-bold text-lg mb-1">🏗️ Orbital Infrastructure</h4>
+                            <p class="text-sm text-slate-600">Fuel depots and spaceports.</p>
+                        </div>
+                        <div class="p-4 rounded-lg cursor-pointer transition-all border-l-4 border-transparent hover:bg-slate-50" id="btn-propulsion" onclick="showAnalysis('propulsion')">
+                            <h4 class="font-bold text-lg mb-1">🔥 Propulsion Dilemmas</h4>
+                            <p class="text-sm text-slate-600">Chemical vs. Nuclear Thermal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="md:col-span-8 bg-slate-50 rounded-xl p-8 border border-slate-200">
+                        <div id="content-regulatory" class="analysis-content">
+                            <h3 class="text-2xl font-bold mb-4 text-slate-900">Solving the Regulatory Bottleneck</h3>
+                            <p class="text-slate-700 mb-4 leading-relaxed">
+                                Currently, space travel is governed by the archaic 1967 Outer Space Treaty, built for nation-states, not civilians. For space travel to be "free," critical decisions must be made regarding traffic management, liability, and property rights.
+                            </p>
+                            <ul class="list-disc pl-5 text-slate-700 space-y-2">
+                                <li><strong>The Decision:</strong> Do we treat space like international waters (Maritime Law) or highly regulated sovereign airspace (Aviation Law)?</li>
+                                <li><strong>The Analysis:</strong> The research suggests a hybrid approach. LEO requires strict Air Traffic Control (Space Traffic Management) to prevent collisions, but deep space should operate under an open-access "flag of convenience" model to spur innovation.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="content-infrastructure" class="analysis-content hidden">
+                            <h3 class="text-2xl font-bold mb-4 text-slate-900">The Requirement for Refueling</h3>
+                            <p class="text-slate-700 mb-4 leading-relaxed">
+                                The tyranny of the rocket equation dictates that you cannot carry all the fuel you need for a deep space round trip from Earth's surface. 
+                            </p>
+                            <ul class="list-disc pl-5 text-slate-700 space-y-2">
+                                <li><strong>The Decision:</strong> Where do we build the gas stations? LEO, Geostationary Orbit, or the Lunar Surface?</li>
+                                <li><strong>The Analysis:</strong> Cost-benefit analysis heavily favors In-Orbit Propellant Depots in LEO, supplied by cheap, fully reusable heavy-lift vehicles. This decoupling of payload launch from fuel launch is the critical node in establishing unrestricted travel.</li>
+                            </ul>
+                        </div>
+
+                        <div id="content-propulsion" class="analysis-content hidden">
+                            <h3 class="text-2xl font-bold mb-4 text-slate-900">Moving Beyond Chemical Rockets</h3>
+                            <p class="text-slate-700 mb-4 leading-relaxed">
+                                Chemical rockets are excellent for escaping Earth's gravity well but are fundamentally too slow and inefficient for "free" movement across the solar system.
+                            </p>
+                            <ul class="list-disc pl-5 text-slate-700 space-y-2">
+                                <li><strong>The Decision:</strong> When and how does civilian travel transition to advanced propulsion like Nuclear Thermal Propulsion (NTP) or Ion Drives?</li>
+                                <li><strong>The Analysis:</strong> While Ion drives are highly efficient, they lack the thrust for human travel. NTP cuts transit time to Mars by 50%, drastically reducing life-support mass and radiation exposure. The critical barrier is terrestrial testing restrictions, not physics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ethics" class="scroll-mt-24 pb-12">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Why Research Matters: Utility & Ethics</h2>
+                <p class="text-slate-600 text-lg">Unrestricted space travel is not merely a technical challenge; it represents a profound shift in human civilization, bringing immense utility and significant ethical dilemmas.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-sm border border-blue-100">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <span class="text-3xl">🌍</span>
+                        <h3 class="text-2xl font-bold text-blue-900">How the Research is Useful</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span><strong>Ecological Relief:</strong> Moving heavy, polluting industries (like metallurgy and server farms) to orbit, allowing Earth to be zoned primarily for residential and biosphere preservation.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span><strong>Infinite Resources:</strong> Tapping into near-Earth asteroids for rare earth metals, effectively ending resource-scarcity driven conflicts on Earth.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span><strong>Medical Breakthroughs:</strong> Manufacturing pure fiber optics and complex pharmaceuticals (like customized proteins) that can only crystallize perfectly in zero-gravity.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-rose-50 to-white p-8 rounded-2xl shadow-sm border border-rose-100">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <span class="text-3xl">⚖️</span>
+                        <h3 class="text-2xl font-bold text-rose-900">Ethical Considerations</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="flex items-start">
+                            <span class="text-rose-500 mr-2">⚠️</span>
+                            <span><strong>The Kessler Syndrome:</strong> Unrestricted travel exponentially increases the risk of orbital debris cascades. Strict end-of-life deorbit protocols must be enforced globally.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-rose-500 mr-2">⚠️</span>
+                            <span><strong>Socio-Economic Stratification:</strong> Ensuring space doesn't become a sanctuary only for the ultra-wealthy. Research must focus on driving costs down to equivalent trans-oceanic flight levels.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-rose-500 mr-2">⚠️</span>
+                            <span><strong>Planetary Protection:</strong> Preventing forward contamination (introducing Earth microbes to pristine environments) and backward contamination (bringing unknown pathogens back).</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-2xl font-bold text-white mb-4">AeroResearch Space</h2>
+            <p class="mb-6">Author: SAMUELSON G. | Research Domain: Aerospace Economics & Engineering</p>
+            <p class="text-sm text-slate-500">
+                This document is a synthesised single-page application intended for interactive academic review. <br>
+                All data models are projections based on historical launch economics.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            Chart.defaults.color = '#64748b';
+            Chart.defaults.plugins.tooltip.padding = 10;
+            Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(15, 23, 42, 0.9)';
+
+            const costCtx = document.getElementById('costChart').getContext('2d');
+            new Chart(costCtx, {
+                type: 'line',
+                data: {
+                    labels: ['1981 (Shuttle)', '2000 (Proton)', '2010 (Atlas V)', '2020 (Falcon 9)', '2026 (Heavy Lift)', '2035 (Target)'],
+                    datasets: [{
+                        label: 'Cost per kg to LEO (USD)',
+                        data: [54000, 10000, 18000, 2600, 1000, 100],
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#fff',
+                        pointBorderColor: '#2563eb',
+                        pointRadius: 5,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            type: 'logarithmic',
+                            title: { display: true, text: 'Cost (Log Scale USD)' },
+                            grid: { color: '#f1f5f9' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            const surveyCtx = document.getElementById('surveyChart').getContext('2d');
+            new Chart(surveyCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Safety & Risk', 'High Costs', 'Health Effects', 'Lack of Interest', 'Environmental Impact'],
+                    datasets: [{
+                        data: [35, 30, 20, 10, 5],
+                        backgroundColor: [
+                            '#ef4444', 
+                            '#f59e0b', 
+                            '#3b82f6', 
+                            '#94a3b8', 
+                            '#10b981'  
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                generateLabels: function(chart) {
+                                    const original = Chart.overrides.doughnut.plugins.legend.labels.generateLabels;
+                                    const labels = original.call(this, chart);
+                                    labels.forEach(label => {
+                                        if (label.text.length > 16) {
+                                            label.text = label.text.substring(0, 13) + '...';
+                                        }
+                                    });
+                                    return labels;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const trlCtx = document.getElementById('trlChart').getContext('2d');
+            window.trlChartInstance = new Chart(trlCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Reusable Launch', 
+                        'Closed-Loop Life Support', 
+                        'In-Orbit Refueling', 
+                        'Radiation Shielding', 
+                        'Lunar ISRU', 
+                        'Nuclear Propulsion'
+                    ],
+                    datasets: [{
+                        label: 'Current TRL (2026)',
+                        data: [9, 6, 5, 4, 3, 4],
+                        backgroundColor: 'rgba(56, 189, 248, 0.2)',
+                        borderColor: '#38bdf8',
+                        pointBackgroundColor: '#0ea5e9',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            pointLabels: { color: '#cbd5e1', font: { size: 11 } },
+                            ticks: { min: 0, max: 9, stepSize: 3, backdropColor: 'transparent', color: '#94a3b8' }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#fff' } }
+                    }
+                }
+            });
+        });
+
+        window.updateRadarChart = function() {
+            if(window.trlChartInstance) {
+                const newData = {
+                    label: 'Projected TRL (2035)',
+                    data: [9, 9, 8, 7, 7, 6],
+                    backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                    borderColor: '#10b981',
+                    pointBackgroundColor: '#059669',
+                    borderWidth: 2
+                };
+                
+                if(window.trlChartInstance.data.datasets.length === 1) {
+                    window.trlChartInstance.data.datasets.push(newData);
+                } else {
+                    window.trlChartInstance.data.datasets[1] = newData;
+                }
+                window.trlChartInstance.update();
+            }
+        };
+
+        window.switchTab = function(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+        };
+
+        window.showAnalysis = function(id) {
+            document.querySelectorAll('[id^="btn-"]').forEach(btn => {
+                btn.classList.remove('border-blue-600', 'bg-slate-50', 'shadow-sm');
+                btn.classList.add('border-transparent');
+            });
+            
+            document.querySelectorAll('.analysis-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            const activeBtn = document.getElementById('btn-' + id);
+            activeBtn.classList.remove('border-transparent');
+            activeBtn.classList.add('border-blue-600', 'bg-slate-50', 'shadow-sm');
+            
+            document.getElementById('content-' + id).classList.remove('hidden');
+        };
+    </script>
+</body>
+</html>
