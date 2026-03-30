@@ -29,13 +29,13 @@ The research evaluates the theoretical foundations of space mobility, including 
 
 ### Propellantless Propulsion Dynamics
 The magnitude of the drag force or thrust for a solar sail in a medium of particle density n, particle mass m_p, and spacecraft relative velocity v is expressed as:
-$$F_{d}=nm_{p}v^{2}A_{eff}$$ 
+                             **$$F_{d}=nm_{p}v^{2}A_{eff}$$**  
 where A_eff represents the effective interaction area of the sail.
 
 ### Brachistochrone Trajectory Kinematics
 Assuming continuous 1g acceleration and deceleration, transit time (t) across the solar system is calculated using the kinematic equation:
-$$t=2\sqrt{d/a}$$ 
-where d represents half the total distance of the journey and a represents the acceleration (9.8 m/s^2).
+                                **$$t=2\sqrt{d/a}$$** 
+where d represents half the total distance of the journey and a represents the acceleration **(9.8 m/s^2).**
 
 ---
 
