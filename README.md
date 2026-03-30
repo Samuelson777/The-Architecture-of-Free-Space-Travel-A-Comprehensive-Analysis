@@ -78,4 +78,6 @@ If you use this research or reference the data tables in your own work, please c
 
 > SAMUELSON G. (2026). *The Architecture of Free Space Travel: A Comprehensive Analysis of Democratized Extraterrestrial Mobility.* Independent Research. gsamuelsonguna@gmail.com
 
+## ⚖️ License
+
 This work is licensed under a **Creative Commons Attribution 4.0 International License.**
